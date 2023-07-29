@@ -5,7 +5,6 @@ import { TourService } from 'src/app/services/tours.service';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
-import Swal from 'sweetalert2';
 
 
 @Component({
@@ -24,7 +23,7 @@ export class SingleTourComponent implements OnInit {
     private route: ActivatedRoute,
     private cartService: CartService,
   ) {
-    this.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl(''); 
+    this.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl('');
   }
 
   ngOnInit() {
@@ -44,20 +43,8 @@ export class SingleTourComponent implements OnInit {
     });
   }
 
- 
-  addToCart() {
-    this.cartService.addToCart(this.tour);
-    Swal.fire({
-      title: 'Producto añadido al carrito exitosamente!',
- 
-      icon: 'success', // También puedes usar 'error', 'warning', 'info', 'question'
-      confirmButtonText: 'Aceptar',
-      customClass: {
-        confirmButton: 'btn-custom-color', // Aquí especificamos la clase CSS personalizada
-      },
-    });
-  }
-  
 
-  
+
+
+
 }
