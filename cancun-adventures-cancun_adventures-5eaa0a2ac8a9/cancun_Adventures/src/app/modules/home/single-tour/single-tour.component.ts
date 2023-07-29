@@ -44,6 +44,9 @@ export class SingleTourComponent implements OnInit {
   }
 
 
+  addToCart() {
+    this.cartService.addToCart(this.tour);
+  }
 
 
 
